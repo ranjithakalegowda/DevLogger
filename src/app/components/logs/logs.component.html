@@ -1,0 +1,15 @@
+
+<ul class="list-group" *ngIf = "loaded && logs.length>0">
+  <li  *ngFor = "let log of logs" class="list-group-item d-flex justify-content-between aligh-items-center">
+   <a href="#" (click) = "onSelect(log)" > {{log.text}} </a>
+   <span class="log-date"> {{log.date | date:'short'}} </span>
+   <i class="fa fa-remove"></i>
+  </li>
+</ul>
+
+<div *ngIf = "loaded && logs.length == 0">
+  <h5>There are no logs to load</h5>
+</div>
+<div *ngIf = "!loaded">
+  Loading
+</div>
